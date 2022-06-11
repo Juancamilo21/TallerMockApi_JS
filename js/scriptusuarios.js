@@ -8,6 +8,7 @@ const apellido = document.getElementById('apellido')
 const edad = document.getElementById('edad')
 const cedula = document.getElementById('cedula')
 const correo = document.getElementById('email')
+const telefono = document.getElementById('telefono')
 let proceso = false
 
 // funcion que se encarga de mostrar los datos en las vistas
@@ -22,6 +23,7 @@ const mostrarUsuarios = (datosUsuarios) => {
                 <td>${usuarios.edad}</td>
                 <td>${usuarios.cedula}</td>
                 <td>${usuarios.email}</td>
+                <td>${usuarios.telefono}</td>
                 <td class="text-center">
                     <a class="btnActualizar btn btn-primary">Actualizar</a>
                     <a class="btnEliminar btn btn-danger">Eliminar</a>
@@ -76,11 +78,13 @@ acciones(document, 'click', '.btnActualizar', e => {
     const edadForm = row.children[3].innerHTML
     const cedulaForm = row.children[4].innerHTML
     const correoForm = row.children[5].innerHTML
+    const telefonoForm = row.children[6].innerHTML
     nombres.value = nombreForm
     apellido.value = apellidoForm
     edad.value = edadForm
     cedula.value = cedulaForm
     correo.value = correoForm
+    telefono.value = telefonoForm
     proceso = true
     mensaje("Para actualizarlo vaya al formulario")
 })
@@ -127,7 +131,8 @@ formulario.addEventListener('submit', (e) => {
         apellidos: apellido.value,
         edad: edad.value,
         cedula: cedula.value,
-        email: correo.value
+        email: correo.value,
+        telefono: telefono.value
     }
     if(!proceso) { // si proceso es false se crea y agrega un nuevo usuario
         agregar(usuario)
