@@ -151,5 +151,6 @@ let limpiarFormulario = () => {
     edad.value = ''
     cedula.value = ''
     correo.value = ''
+    telefono.value = ''
 }
 let mensaje = (texto) => alert(texto)
