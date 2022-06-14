@@ -95,7 +95,6 @@ const agregar = (cirugia) => {
     .then(data => {
         mostrarCirugias(data)
     })
-    location.reload()
 }
 
 // funcion que se encarga de actualizar los datos en la Api
@@ -122,6 +121,7 @@ formulario.addEventListener('submit', (e) => {
     if(!proceso) { // si proceso es false se crea y agrega una nueva cirugia
         agregar(cirugia)
         mensaje("Se ha agregado y guardado exitosamente")
+        location.reload()
     }else { // si es verdadero se actualiza
         actualizar(cirugia)
         mensaje("Se ha actualizado exitosamente")
